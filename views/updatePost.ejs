@@ -1,0 +1,27 @@
+<%- include("./partials/header.ejs") %>
+
+<main class="page">
+  <div class="posts-container">
+    <div class="post-card">
+      <h2 class="form-title">Update Post</h2>
+
+      <form action="/updatePost" method="post" class="post-form">
+        <input type="hidden" name="index" value="<%= index %>">
+
+        <div class="form-row">
+          <label for="title">Title</label>
+          <input id="title" name="title" value="<%= title[index] %>" required>
+        </div>
+
+        <div class="form-row">
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" rows="5"><%= post[index] %></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Post</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include("./partials/footer.ejs") %>

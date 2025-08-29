@@ -1,0 +1,35 @@
+<%- include("./partials/header.ejs") %>
+<main>
+  <!-- <hr /> -->
+  <div class="center-post">
+    <h2>
+      <strong>Talk To <span class="fancy">The World.</span></strong>
+    </h2>
+    <p class="para">
+      What if you can make the whole world to listen? Now They can
+    </p>
+  </div>
+
+  <div class="posts-container">
+    <% posts.forEach((post, i) => { %>
+    <div class="post-card">
+      <h3><%= title[i] %></h3>
+      <p><%= post %></p>
+
+      <form action="/deletePost" method="post" style="display: inline">
+        <input type="hidden" name="post" value="<%= i %>" />
+
+        <hr />
+        <button type="submit" class="link-button" style="display: block">
+          Delete Post
+        </button>
+
+        <a href="/updatePost?index=<%= i %>" class="smaller-button"
+          >Update Post
+        </a>
+      </form>
+    </div>
+    <% }); %>
+  </div>
+</main>
+<%- include("./partials/footer.ejs")%>
