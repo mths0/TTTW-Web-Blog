@@ -4,20 +4,26 @@
   <div class="posts-container">
     <div class="post-card">
       <h2 class="form-title">Talk To The World</h2>
-      <p class="form-subtitle">Write your thoughts and share them with The World</p>
+      <p class="form-subtitle">
+        Write your thoughts and share them with The World
+      </p>
 
       <form action="/post" method="post" class="post-form">
         <div class="form-row">
           <label for="title">Title</label>
-          <input id="title" name="title" required>
+          <input id="title" name="title" required />
         </div>
 
         <div class="form-row">
           <label for="subject">Subject</label>
           <textarea id="subject" name="subject" rows="20" required></textarea>
         </div>
+        <div class="form-row">
+          <label for="image">Upload an Image</label>
+          <input name="image" type="file" />
+        </div>
 
-        <button type="submit" class="btn btn-primary ">Publish</button>
+        <button type="submit" class="btn btn-primary">Publish</button>
       </form>
     </div>
   </div>
