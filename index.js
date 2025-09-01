@@ -17,7 +17,7 @@ app.post("/post", (req, res) => {
   console.log(req.body);
   MyPosts.unshift(req.body["subject"]);
   MyTitles.unshift(req.body["title"]);
-  console.log("posts:", MyPosts);
+  // console.log("posts:", MyPosts);
   res.redirect("/");
 });
 
@@ -25,7 +25,7 @@ app.post("/deletePost", (req, res) => {
   console.log(req.body);
   delete MyPosts[req.body["post"]];
   delete MyTitles[req.body["post"]];
-  console.log(MyPosts, MyTitles);
+  // console.log(MyPosts, MyTitles);
   
   res.redirect("/");
 });
